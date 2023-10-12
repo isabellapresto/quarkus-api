@@ -7,31 +7,34 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
+
+
 @Entity
-@Table(name = "tabell") // Namn på tabell i databas
+@Table(name = "user_info")
 public class User implements Comparable<User> {
 
-@Id
-@GeneratedValue(strategy = GenerationType.IDENTITY)
-@Column(name = "id") // Kolumnnamn i din databas
- private int id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private int id;
 
- @Column(name = "namn", insertable = false, updatable = false)
- private String firstName;
- @Column(name = "namn", insertable = false, updatable = false)
- private String lastName;
- 
+    @Column(name = "firstName")
+    private String firstName;
 
- @Column(name = "land") // Kolumnnamn i din databas
- private int age;
+    @Column(name = "lastName")
+    private String lastName;
+
+    @Column(name = "age")
+    private int age;
+
 
  public int getId() {
-     return id;
- }
+    return id;
+}
 
- public void setId(int id) {
-     this.id = id;
- }
+public void setId(int id) {
+    this.id = id;
+}
 
  public String getFirstName() {
      return firstName;
