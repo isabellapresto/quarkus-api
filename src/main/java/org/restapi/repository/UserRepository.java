@@ -1,5 +1,9 @@
 package org.restapi.repository;
+import org.restapi.entity.User;
 
-public class UserRepository {
- 
+import io.quarkus.hibernate.orm.panache.PanacheRepository;
+import jakarta.enterprise.context.ApplicationScoped;
+
+@ApplicationScoped
+public class UserRepository implements PanacheRepository<User> {
 }

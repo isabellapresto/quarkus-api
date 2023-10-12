@@ -6,62 +6,53 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
-
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
+import jakarta.persistence.*;
+import jakarta.validation.constraints.Max;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Size;
 
 @Entity
-@Table(name = "user_info")
-public class User implements Comparable<User> {
+@Table(name = "tabell")
+public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
+    private long id;
 
-    @Column(name = "firstName")
+    @Column(name="name", nullable = false)
+    @NotBlank
+    @Size(max = 256)
     private String firstName;
 
-    @Column(name = "lastName")
-    private String lastName;
+    @Column(name="country", nullable = false)
+    @NotBlank
+    @Size(max = 256)
+    private String country;
 
-    @Column(name = "age")
-    private int age;
+    public long getId() {
+        return id;
+    }
 
+    public void setId(long id) {
+        this.id = id;
+    }
 
- public int getId() {
-    return id;
-}
+    public String getFirstName() {
+        return firstName;
+    }
 
-public void setId(int id) {
-    this.id = id;
-}
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
 
- public String getFirstName() {
-     return firstName;
- }
+    public String getCountry() {
+        return country;
+    }
 
- public void setFirstName(String firstName) {
-     this.firstName = firstName;
- }
-
- public String getLastName() {
-     return lastName;
- }
-
- public void setLastName(String lastName) {
-     this.lastName = lastName;
- }
-
- public int getAge() {
-     return age;
- }
-
- public void setAge(int age) {
-     this.age = age;
- }
-
- @Override
- public int compareTo(User o) {
-     return id - o.getId();
- }
+    public void setCountry(String country) {
+        this.country = country;
+    }
 }
