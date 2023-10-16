@@ -16,7 +16,7 @@ public class ExceptionHandler implements ExceptionMapper<Exception> {
                     .build();
         }
         return Response.status(Response.Status.INTERNAL_SERVER_ERROR)
-                .entity(new ErrorResponseBody("Something unexpected happened. Try again"))
+                .entity(new ErrorResponseBody("Something unexpected happened!!!!!!! Try again"))
                 .build();
     }
 

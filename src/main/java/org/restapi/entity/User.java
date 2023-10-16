@@ -25,7 +25,7 @@ public class User {
     @Column(name="name", nullable = false)
     @NotBlank
     @Size(max = 256)
-    private String firstName;
+    private String name;
 
     @Column(name="country", nullable = false)
     @NotBlank
@@ -40,12 +40,12 @@ public class User {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getCountry() {

@@ -34,7 +34,7 @@ public class DefaultUserService implements UserService {
     @Override
     public User updateUser(long id, User user) throws UserNotFoundException {
         User existingUser = getUserById(id);
-        existingUser.setFirstName(user.getFirstName());
+        existingUser.setName(user.getName());
         existingUser.setCountry(user.getCountry());
         userRepository.persist(existingUser);
         return existingUser;

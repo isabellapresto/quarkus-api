@@ -61,17 +61,17 @@ public class UserController {
     public static class UserDto {
 
         @NotBlank
-        private String firstName;
+        private String name;
 
         @NotBlank
         private String country;
 
-        public String getFirstName() {
-            return firstName;
+        public String getName() {
+            return name;
         }
 
-        public void setFirstName(String firstName) {
-            this.firstName = firstName;
+        public void setName(String name) {
+            this.name = name;
         }
 
         public String getCountry() {
@@ -84,7 +84,7 @@ public class UserController {
 
         public User toUser() {
             User user = new User();
-            user.setFirstName(firstName);
+            user.setName(name);
             user.setCountry(country);
             return user;
         }
