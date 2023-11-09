@@ -43,6 +43,13 @@
       <scope>test</scope>
     </dependency>
 
+<!-- Docker dependencys  -->
+    <!-- <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.27</version> 
+     </dependency> -->
+     
 <!-- Added dependencys  -->
     <dependency>
       <groupId>io.quarkus</groupId>

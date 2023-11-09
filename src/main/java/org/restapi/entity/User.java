@@ -24,12 +24,12 @@ public class User {
 
     @Column(name="name", nullable = false)
     @NotBlank
-    @Size(max = 256)
+    @Size(max = 50)
     private String name;
 
     @Column(name="country", nullable = false)
     @NotBlank
-    @Size(max = 256)
+    @Size(max = 50)
     private String country;
 
     public long getId() {
